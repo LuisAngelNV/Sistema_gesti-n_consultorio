@@ -21,7 +21,5 @@ namespace SistemaConsultorio.Models
             Otorrinolaringologia,
             Psicologia
         }
-
-
     }
 }
