@@ -1,0 +1,113 @@
+# ===============================================
+# Archivos y carpetas generales de Git
+# ===============================================
+.DS_Store          # Archivos de macOS
+.vscode/           # Configuraciones de VS Code (opcional, si quieres ignorarlas)
+*.user             # Archivos de configuración de usuario de Visual Studio
+*.suo              # Soluciones de usuario de Visual Studio
+Thumbs.db          # Archivos de Windows
+.vs
+# ===============================================
+# C# / .NET
+# ===============================================
+# Binarios
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+# Paquetes de NuGet
+packages/
+*.nupkg
+*.snk
+
+# Archivos de Visual Studio y proyectos .NET
+*.sln.docstates
+*.vsproj.user
+*.resharper
+*.vspscc
+*.vssscc
+*.userprefs
+*.vs/              # Carpeta .vs en la raíz de la solución
+.vspscc
+.nuget/            # Carpeta .nuget (si no la usas para restauración)
+obj/               # Se repite por seguridad, pero ya debería estar cubierta
+
+# Archivos de prueba
+TestResults/
+*.trx
+
+# Archivos de compilación
+*.pdb              # Archivos de depuración
+*.dll
+*.exe
+*.log
+*.cache
+
+# ===============================================
+# Java / Maven / Gradle
+# ===============================================
+# Compilación de Java
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# Archivos de Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.bak
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# Archivos de Gradle
+.gradle/
+build/
+out/
+.project
+.classpath
+.settings/         # Configuraciones de Eclipse
+bin/               # Clases compiladas (si usas Eclipse o IDEs similares que las generen)
+*/bin/             # Por si los binarios están en subcarpetas de proyectos
+
+# Archivos de IDEs de Java (Eclipse, IntelliJ IDEA, NetBeans)
+.idea/             # Configuraciones de IntelliJ IDEA
+*.iml              # Archivos de módulo de IntelliJ IDEA
+*.ipr              # Archivos de proyecto de IntelliJ IDEA
+*.iws              # Archivos de espacio de trabajo de IntelliJ IDEA
+
+nbproject/         # Configuraciones de NetBeans
+*.log
+*.log.lck
+
+# Logs y temporales
+*.log
+tmp/
+temp/
+
+# ===============================================
+# Archivos de entorno y secretos (SIEMPRE IGNORAR)
+# ===============================================
+.env               # Archivos de variables de entorno
+*.env
+config.json        # Si contiene información sensible
+appsettings.json   # C# .NET Core - si contiene secretos (puedes ignorarlo y usar variables de entorno)
+appsettings.*.json # Ignorar variantes también
+application.properties # Java Spring Boot - si contiene secretos
+application*.properties
+application.yml    # Java Spring Boot - si contiene secretos
+application*.yml
+
+# Archivos de credenciales (nunca subas estos)
+credentials.json
+key.pem
+id_rsa
+id_rsa.pub
+*.key
+*.pem
+*.pfx
