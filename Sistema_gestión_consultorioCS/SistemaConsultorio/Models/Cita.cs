@@ -10,13 +10,15 @@ namespace SistemaConsultorio.Models
     {
         public DateTime Fecha { get; set; }
         public string Motivo { get; set; }
-        public string Medico { get; set; }
-        public Cita(DateTime fecha, string motivo, string medico)
+        public Doctor DoctorAsignado { get; set; }
+        public Paciente PacienteAsignado { get; set; }
+
+        public Cita(DateTime fecha, string motivo, Doctor doctor, Paciente paciente)
         {
             Fecha = fecha;
             Motivo = motivo;
-            Medico = medico;
+            DoctorAsignado = doctor;
+            PacienteAsignado = paciente;
         }
-
     }
 }

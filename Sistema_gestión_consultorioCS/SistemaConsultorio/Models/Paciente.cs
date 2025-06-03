@@ -8,10 +8,20 @@ namespace SistemaConsultorio.Models
 {
     internal class Paciente : Persona
     {
-        public Paciente(string nombre, int edad, string telefono, string direccion, string genero, string grupoSanguineo, string seguroMedico)
-            : base(nombre, edad, telefono, direccion, genero, grupoSanguineo, seguroMedico)
-        {
+        private List<Cita> HistorialCitas { get; set; } = new List<Cita>();
 
+        public Paciente(string nombre, int edad, string telefono, string direccion, Genero genero, GrupoSanguineo grupoSanguineo, string seguroMedico)
+            : base(nombre, edad, telefono, direccion, genero, grupoSanguineo, seguroMedico)
+        { }
+
+        public void AgregarCita(Cita nuevaCita)
+        {
+            HistorialCitas.Add(nuevaCita);
+        }
+
+        public List<Cita> ObtenerHistorialCitas()
+        {
+            return HistorialCitas;
         }
     }
 }

@@ -8,5 +8,20 @@ namespace SistemaConsultorio.Models
 {
     internal class Especialidad
     {
+        public enum Especialidades
+        {
+            MedicinaGeneral,
+            Cardiologia,
+            Dermatologia,
+            Pediatria,
+            Neurologia,
+            Ginecologia,
+            Traumatologia,
+            Oftalmologia,
+            Otorrinolaringologia,
+            Psicologia
+        }
+
+
     }
 }
