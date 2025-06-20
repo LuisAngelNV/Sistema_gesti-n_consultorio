@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaConsultorio.Models
 {
-    internal class Cita
+    public class Cita
     {
         public DateTime Fecha { get; set; }
         public string Motivo { get; set; }

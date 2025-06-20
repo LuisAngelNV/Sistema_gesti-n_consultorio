@@ -6,20 +6,17 @@ using System.Threading.Tasks;
 
 namespace SistemaConsultorio.Models
 {
-    internal class Especialidad
+    public enum Especialidad
     {
-        public enum Especialidades
-        {
-            MedicinaGeneral,
-            Cardiologia,
-            Dermatologia,
-            Pediatria,
-            Neurologia,
-            Ginecologia,
-            Traumatologia,
-            Oftalmologia,
-            Otorrinolaringologia,
-            Psicologia
-        }
+        MedicinaGeneral,
+        Cardiologia,
+        Dermatologia,
+        Pediatria,
+        Neurologia,
+        Ginecologia,
+        Traumatologia,
+        Oftalmologia,
+        Otorrinolaringologia,
+        Psicologia
     }
 }

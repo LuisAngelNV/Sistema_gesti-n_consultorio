@@ -9,10 +9,17 @@ namespace SistemaConsultorio.Services
 {
     public class CitaService
     {
-        public static void AgregarCita(Paciente paciente, Cita nuevaCita)
+        private List<Cita> citas = new List<Cita>();
+        public void AgendarCita(Cita cita)
         {
-            paciente.AgregarCita(nuevaCita);
-            Console.WriteLine($"Se ha asignado una nueva cita a {paciente.nombre}");
+            citas.Add(cita);
+            Console.WriteLine("✅ Cita agendada correctamente.");
         }
+
+        public List<Cita> ObtenerCitas()
+        {
+            return citas;
+        }
+
     }
 }

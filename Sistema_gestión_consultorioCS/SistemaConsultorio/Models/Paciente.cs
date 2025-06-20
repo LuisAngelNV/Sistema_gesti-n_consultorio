@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaConsultorio.Models
 {
-    internal class Paciente : Persona
+    public class Paciente : Persona
     {
         private List<Cita> HistorialCitas { get; set; } = new List<Cita>();
 

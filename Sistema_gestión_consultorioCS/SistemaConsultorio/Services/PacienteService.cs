@@ -16,12 +16,9 @@ namespace SistemaConsultorio.Services
             pacientes.Add(nuevoPaciente);
         }
 
-        public void ListaPacientes()
+        public List<Paciente> ListaPacientes()
         {
-            foreach (var paciente in pacientes)
-            {
-                Console.WriteLine($"Nombre: {paciente.nombre}, Edad: {paciente.ed}");
-            }
+            return pacientes;
         }
 
         public void EditarPaciente(string nombre)

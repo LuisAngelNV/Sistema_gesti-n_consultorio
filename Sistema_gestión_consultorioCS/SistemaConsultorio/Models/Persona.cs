@@ -7,73 +7,72 @@ using System.Threading.Tasks;
 
 namespace SistemaConsultorio.Models
 {
-    internal class Persona
+    public class Persona
     {
         public int Id { get; set; }
         public enum Genero { Masculino, Femenino, Otro }
         public enum GrupoSanguineo { A, B, AB, O }
-        private string Nombre;
-        private int Edad { get; set; }
-        private string Telefono { get; set; }
-        private string Direccion { get; set; }
-        private Genero genero { get; set; }
-        private GrupoSanguineo grupoSanguineo { get; set; }
-        private string SeguroMedico { get; set; }
-
-        public Persona(string nombre, int edad, string telefono, string direccion, Genero genero, GrupoSanguineo grupoSanguineo, string seguroMedico)
+        public string Nombre
         {
-            Nombre = nombre;
-            Edad = edad;
-            Telefono = telefono;
-            Direccion = direccion;
-            this.genero = genero;
-            this.grupoSanguineo = grupoSanguineo;
-            SeguroMedico = seguroMedico;
-        }
-
-        public string nombre
-        {
-            get { return Nombre; }
+            get => nombre;
             set
             {
-                if (string.IsNullOrEmpty(Nombre))
-                {
-                    Console.WriteLine("El campo no puede estar vacio");
-                }
-                else if (Nombre.Length <= 1)
-                {
-                    {
-                        Console.WriteLine("El nombre no es valido");
-                    }
-                }
+                if (string.IsNullOrWhiteSpace(value) || value.Length <= 1)
+                    throw new ArgumentException("El nombre no es válido.");
+                nombre = value;
             }
         }
-        public string telefon
+        private string nombre;
+        public int Edad
         {
-            get { return telefon; }
-
+            get => edad;
+            set 
+            {
+                if (edad < 0) throw new ArgumentException("No puede ser un valor negativo");   
+            }
+        }
+        private int edad;
+        public string Telefono
+        {
+            get => telefono;
             set
             {
-                if (string.IsNullOrEmpty(telefon))
+                if (string.IsNullOrEmpty(telefono))
                 {
                     Console.WriteLine("Se necesita un número de celular para contactar al usuario");
-                }else if(telefon.Length <= 7)
+                }
+                else if (telefono.Length <= 7)
                 {
                     Console.WriteLine("Verificar que es un número valido");
                 }
             }
         }
-
-        public int edad
+        private string telefono;
+        private string Direccion { get; set; }
+        private Genero genero { get; set; }
+        private GrupoSanguineo grupoSanguineo { get; set; }
+        public string SeguroMedico
         {
-            get { return Edad; }
+            get => seguroMedico;
             set
             {
-                if (string.IsNullOrEmpty(Convert.ToString(Edad)))
+                if (string.IsNullOrEmpty(seguroMedico))
                 {
-                    Console.WriteLine("No se puede dejar vacio el campo");
+                    Console.WriteLine("");
                 }
             }
+        }
+        private string seguroMedico { get; set; }
+
+        public Persona(string nombre, int _edad, string telefono, string direccion, Genero genero, GrupoSanguineo grupoSanguineo, string seguroMedico)
+        {
+            Nombre = nombre;
+            edad = _edad;
+            Telefono = telefono;
+            Direccion = direccion;
+            this.genero = genero;
+            this.grupoSanguineo = grupoSanguineo;
+            SeguroMedico = seguroMedico;
         }
     }
 }
